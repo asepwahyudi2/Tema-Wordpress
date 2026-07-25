@@ -18,7 +18,8 @@ jobs:
           server: '195.88.211.70'
           username: 'TemaWordpress@gamemodia.com'
           password: 'asep12345@@@'
-          server-dir: /
+          server-dir: ./
+          dangerous-clean-html: false
           exclude: |
             **/.git*
             **/.git*/**
