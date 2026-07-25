@@ -12,6 +12,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Debug Secrets Presence
+        run: |
+          echo "Checking if secrets are populated (true/false):"
+          echo "FTP_SERVER is set: ${{ secrets.FTP_SERVER != '' }}"
+          echo "FTP_USERNAME is set: ${{ secrets.FTP_USERNAME != '' }}"
+          echo "FTP_PASSWORD is set: ${{ secrets.FTP_PASSWORD != '' }}"
+
       - name: Sync Files to Hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
