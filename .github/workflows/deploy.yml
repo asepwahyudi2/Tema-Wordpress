@@ -15,7 +15,7 @@ jobs:
       - name: Debug Secrets Presence
         run: |
           echo "Checking if secrets are populated (true/false):"
-          if [ -n "${{ secrets.FTP_SERVER }}" ]; then echo "FTP_SERVER is set"; else echo "FTP_SERVER is EMPTY"; fi
+          if [ -n "${{ secrets.FTP_SERVER }}" ]; then echo "FTP_SERVER is set to ${{ secrets.FTP_SERVER }}"; else echo "FTP_SERVER is EMPTY"; fi
           if [ -n "${{ secrets.FTP_USERNAME }}" ]; then echo "FTP_USERNAME is set"; else echo "FTP_USERNAME is EMPTY"; fi
           if [ -n "${{ secrets.FTP_PASSWORD }}" ]; then echo "FTP_PASSWORD is set"; else echo "FTP_PASSWORD is EMPTY"; fi
 
