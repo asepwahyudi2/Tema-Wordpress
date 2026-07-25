@@ -25,10 +25,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: wp-content/themes/game-repack-theme/
-          protocol: ftp
-          port: 21
-          security: loose
+          server-dir: /
           exclude: |
             **/.git*
             **/.git*/**
