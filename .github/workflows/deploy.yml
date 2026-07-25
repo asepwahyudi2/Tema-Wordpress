@@ -15,9 +15,9 @@ jobs:
       - name: Debug Secrets Presence
         run: |
           echo "Checking if secrets are populated (true/false):"
-          echo "FTP_SERVER is set: ${{ secrets.FTP_SERVER != '' }}"
-          echo "FTP_USERNAME is set: ${{ secrets.FTP_USERNAME != '' }}"
-          echo "FTP_PASSWORD is set: ${{ secrets.FTP_PASSWORD != '' }}"
+          if [ -n "${{ secrets.FTP_SERVER }}" ]; then echo "FTP_SERVER is set"; else echo "FTP_SERVER is EMPTY"; fi
+          if [ -n "${{ secrets.FTP_USERNAME }}" ]; then echo "FTP_USERNAME is set"; else echo "FTP_USERNAME is EMPTY"; fi
+          if [ -n "${{ secrets.FTP_PASSWORD }}" ]; then echo "FTP_PASSWORD is set"; else echo "FTP_PASSWORD is EMPTY"; fi
 
       - name: Sync Files to Hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
